@@ -1,0 +1,8 @@
+.header__links_mobile-open {
+  order: 1;
+  flex-direction: column;
+  width: 100vw;
+  padding-top: 13px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+}

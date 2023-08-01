@@ -1,0 +1,5 @@
+.login__button_disabled {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}

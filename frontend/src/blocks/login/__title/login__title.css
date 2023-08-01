@@ -1,0 +1,23 @@
+.login__title {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 768px) {
+  .login__title {
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    font-size: calc((100vw - 320px)/(768 - 320) * (24 - 20) + 20px);
+    line-height: calc((100vw - 320px)/(768 - 320) * (29 - 24) + 24px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,23 @@
+.popup__title-tooltip {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 900;
+  color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__title-tooltip {
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    font-size: calc((100vw - 320px)/(768 - 320) * (24 - 20) + 20px);
+    line-height: calc((100vw - 320px)/(768 - 320) * (29 - 24) + 24px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__title-tooltip {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

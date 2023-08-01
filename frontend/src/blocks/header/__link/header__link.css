@@ -1,0 +1,32 @@
+.header__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 22px;
+  transition: opacity 0.2s;
+}
+
+.header__link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .header__link {
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    margin-right: calc((100vw - 320px)/(768 - 320) * (0 - 27) + 27px);
+    font-size: calc((100vw - 320px)/(768 - 320) * (18 - 14) + 14px);
+    line-height: calc((100vw - 320px)/(768 - 320) * (22 - 17) + 17px);
+  }
+
+  .header__link:hover {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__link {
+    margin-right: 27px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

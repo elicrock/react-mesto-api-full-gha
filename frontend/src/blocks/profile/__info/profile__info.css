@@ -1,0 +1,28 @@
+.profile__info {
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+  "profile__title profile__edit-button"
+  "profile__subtitle profile__subtitle";
+  gap: 10px 18px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile__info {
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    max-width: calc((100vw - 320px)/(1024 - 320) * (460 - 320) + 320px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    gap: calc((100vw - 320px)/(768 - 320) * (16 - 14) + 10px) calc((100vw - 320px)/(768 - 320) * (18 - 10) + 10px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__info {
+    gap: 6px;
+  }
+}

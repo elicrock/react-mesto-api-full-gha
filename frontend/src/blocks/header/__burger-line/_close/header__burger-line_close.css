@@ -1,0 +1,13 @@
+.header__burger-line_close {
+  height: 0;
+}
+
+.header__burger-line_close::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.header__burger-line_close::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
