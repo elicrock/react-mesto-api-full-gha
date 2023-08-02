@@ -29,7 +29,7 @@ const getUserById = (req, res, next) => {
 const getCurrentUser = (req, res, next) => {
   User.findById(req.user._id)
     .orFail(new NotFoundError('Пользователь по указанному id не найден!'))
-    .then((user) => res.send(user))
+    .then((user) => res.send({ data: user }))
     .catch(next);
 };
 
@@ -96,6 +96,13 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
+const logout = (req, res) => {
+  if (res.cookie) {
+    res.clearCookie('jwt');
+    res.send({ message: 'Вы успешно вышли из аккаунта!' });
+  }
+};
+
 module.exports = {
   getUsers,
   getUserById,
@@ -104,4 +111,5 @@ module.exports = {
   updateUserInfo,
   updateUserAvatar,
   login,
+  logout,
 };

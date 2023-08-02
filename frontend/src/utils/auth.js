@@ -35,6 +35,13 @@ export const authorize = (email, password) => {
   })
 }
 
+export const logout = () => {
+  return request(`${BASE_URL}/logout`, {
+    method: 'POST',
+    credentials: 'include',
+  })
+}
+
 export const getContent = () => {
   return request(`${BASE_URL}/users/me`, {
     method: 'GET',

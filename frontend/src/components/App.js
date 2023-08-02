@@ -38,7 +38,7 @@ function App() {
     if (isLoggedIn) {
       Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([cardsData, userData]) => {
-        setCurrentUser(userData);
+        setCurrentUser(userData.data);
         setCards(cardsData);
       })
       .catch(err => {
@@ -126,7 +126,16 @@ function App() {
   }
 
   function signOut() {
-    navigate('/sign-in', {replace: true});
+    auth.logout()
+      .then(res => {
+        if (res) {
+          setIsLoggedIn(false);
+          navigate('/sign-in', {replace: true});
+        }
+      })
+      .catch(err => {
+        console.error('Произошла ошибка выполнения запроса:', err);
+      })
   }
 
   function handleCardLike(card) {
