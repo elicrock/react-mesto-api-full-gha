@@ -103,9 +103,10 @@ function App() {
         handleInfoTooltip();
         navigate('/sign-in', {replace: true});
       })
-      .catch(() => {
+      .catch((err) => {
         setIsRegisterMessage(false);
         handleInfoTooltip();
+        console.error('Произошла ошибка выполнения запроса:', err);
       })
   }
 
@@ -121,8 +122,9 @@ function App() {
           setIsLoggedIn(false);
         }
       })
-      .catch(() => {
+      .catch((err) => {
         setIsLoggedIn(false);
+        console.error('Произошла ошибка выполнения запроса:', err);
       })
   }
 
