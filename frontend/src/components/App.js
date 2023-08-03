@@ -36,10 +36,9 @@ function App() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      Promise.all([api.getInitialCards(), api.getUserInfo()])
-      .then(([cardsData, userData]) => {
-        setCurrentUser(userData.data);
-        setCards(cardsData);
+      api.getInitialCards()
+      .then((cardsData) => {
+        setCards(cardsData.reverse());
       })
       .catch(err => {
         console.error(`Не удалось получить данные. ${err}`);
@@ -86,8 +85,9 @@ function App() {
 
   function onLogin({ email, password }) {
     auth.authorize(email, password)
-      .then(() => {
+      .then((res) => {
         setIsLoggedIn(true);
+        setCurrentUser(res.user);
         setUserEmail(email);
         navigate('/', {replace: true});
       })
@@ -114,7 +114,8 @@ function App() {
       .then((res) => {
         if (res) {
           setIsLoggedIn(true);
-          setUserEmail(res.data.email);
+          setCurrentUser(res);
+          setUserEmail(res.email);
           navigate('/', {replace: true});
         } else {
           setIsLoggedIn(false);
@@ -131,6 +132,7 @@ function App() {
         if (res) {
           setIsLoggedIn(false);
           navigate('/sign-in', {replace: true});
+          setCurrentUser({});
         }
       })
       .catch(err => {
