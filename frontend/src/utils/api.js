@@ -84,7 +84,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.mesto.rockelic.nomoreparties.co',
   headers: {
     'Content-Type': 'application/json'
   }

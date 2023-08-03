@@ -9,7 +9,11 @@ const mongooseOptions = {
 };
 
 const corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: [
+    'http://localhost:3001',
+    'http://mesto.rockelic.nomoreparties.co',
+    'https://mesto.rockelic.nomoreparties.co',
+  ],
   credentials: true,
 };
 
