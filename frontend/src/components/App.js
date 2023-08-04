@@ -92,6 +92,7 @@ function App() {
         navigate('/', {replace: true});
       })
       .catch(err => {
+        handleInfoTooltip();
         console.error(`Что-то пошло не так! ${err}`);
       })
   }
